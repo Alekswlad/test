@@ -6,14 +6,13 @@
 
 body {
   font-family: "Proxima Nova";
-  width: 1920px;
+  max-width: 1920px;
+  display: flex;
+  flex-direction: column;
 }
-.menu {
-  margin-left: 51px;
-}
+
 .menu,
 .submenu {
-  font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -26,24 +25,26 @@ body {
   list-style: none;
   margin-top: 10px;
 }
-.subMenu {
-  font-family: "Proxima Nova";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 125%;
+.submenu__item {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 0px;
   gap: 5px;
-  list-style: none;
   margin-left: 45px;
 }
 .header {
+  padding: 0px 51px;
   display: flex;
+  justify-content: space-between;
 }
-.navmenu {
+.header-body {
+  padding: 0px 51px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navmenu__item {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -51,32 +52,33 @@ body {
   gap: 15px;
   list-style: none;
   margin-top: 30px;
-  font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 120%;
-  margin-left: 655px;
+}
+.navmenu__item a:hover {
+  border-bottom: 3px solid #44c697;
 }
 .navmenu a,
-.categories a {
+.header__categories a {
   color: #1e2e36;
   font-weight: 700;
 }
-.categories {
+.header__categories {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   padding: 0px;
-  gap: 15px;
+  gap: 19px;
   list-style: none;
   font-style: normal;
   font-size: 18px;
-  margin-left: 51px;
 }
 .border {
+  margin-bottom: 8px;
   position: absolute;
-  width: 1920px;
+  width: 100%;
   height: 0px;
   left: 0px;
   top: 60px;
@@ -84,28 +86,26 @@ body {
   border: 1px solid #1e2e36;
 }
 .logo {
-  display: flex;
-  flex-direction: row;
   align-items: flex-end;
   padding: 0px;
-  gap: 15px;
-  justify-content: center;
   margin-top: 15px;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  margin-left: 120px;
-  align-items: center;
 }
-
+.logo img {
+  width: 360px;
+}
+.order {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: center;
+}
 .shoppingCart {
   text-align: center;
-  font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 120%;
-  margin-left: 310.31px;
+  margin-top: 10px;
   align-items: center;
 }
 .shoppingCart a {
@@ -117,18 +117,20 @@ body {
 .shoppingCart span {
   margin-top: 4px;
 }
-.header__btn {
+.header__item img {
+  margin-bottom: -6px;
+}
+.header__btn,
+.bed__btn {
   padding: 14px 46px;
   background: #44c697;
   border-radius: 3px;
   border: none;
-  font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 120%;
   color: #fff;
-  margin-right: 50px;
   cursor: pointer;
   transition: transform 500ms ease;
 }
@@ -145,52 +147,113 @@ body {
   background: #41af87;
   transform: translateY(2px);
 }
+
+/* dur menu */
+.burger-menu {
+  display: none;
+}
+@media screen and (max-width: 475px) {
+  .burger-menu {
+    display: block;
+  }
+}
+.burger-menu__list {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100%);
+  transition: 0.5s;
+  z-index: 1;
+}
+.burger-menu__link {
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+}
+.burger-menu__btn {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: #44c697;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  z-index: 2;
+}
+.burger-menu__btn--active span {
+  position: absolute;
+}
+.burger-menu__btn--active span:nth-child(1) {
+  transform: rotate(45deg);
+}
+.burger-menu__btn--active span:nth-child(2) {
+  opacity: 0;
+}
+.burger-menu__btn--active span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+/* при натиснені на кнопку застосування класу */
+.burger-menu__btn--active + .burger-menu__list {
+  transform: translateY(0);
+}
+.burger-menu__btn span {
+  height: 2px;
+  width: 80%;
+  background-color: #000;
+  transition: 0.5s;
+}
+
+/*  */
 .bed {
   height: 785px;
   max-width: 1920px;
   background-image: url(img/1.jpg);
+  margin-bottom: 100px;
 }
 .novelty {
   height: 670px;
   width: 462px;
   background-color: #fff;
+  margin-top: -1px;
   margin-left: 51px;
   border-left: 15px solid #44c697;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
-
-h1 {
+.novelty h1 {
   margin-top: 99px;
-  margin-left: 90px;
-  width: 281px;
   height: 64px;
-  font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 700;
   font-size: 64px;
   line-height: 100%;
   color: #1e2e36;
 }
-
-h3 {
+.novelty h3 {
   margin-top: 50px;
-  margin-left: 115px;
-  width: 231px;
   height: 45px;
-  font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
   line-height: 125%;
   color: #1e2e36;
 }
-p {
+.novelty p {
   margin-top: 10px;
-  margin-left: 74px;
+  margin-bottom: 30px;
   width: 313px;
   height: 90px;
-  font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 400;
   font-size: 36px;
@@ -198,119 +261,65 @@ p {
   text-align: center;
   color: #1e2e36;
 }
-.bed__btn {
-  height: 51px;
-  width: 209px;
-  background: #44c697;
-  border-radius: 3px;
-  border: none;
-  font-family: "Proxima Nova";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 120%;
-  text-align: center;
-  color: #fff;
-  margin-top: 30px;
-  margin-left: 126px;
-  cursor: pointer;
-  transition: transform 500ms ease;
-}
 .date {
   margin-top: 50px;
-  margin-left: 190px;
 }
+/*  */
 .benefits {
   background: #44c697;
-  margin-left: 786px;
+  margin: 0 auto;
   width: 20px;
   height: 50px;
 }
-h2 {
-  margin-top: 100px;
-  margin-left: -5px;
-  width: 338px;
+.benefits h2 {
+  white-space: nowrap;
   height: 60px;
-  font-family: "Proxima Nova";
-  font-style: normal;
   font-weight: 700;
   font-size: 48px;
   line-height: 125%;
-  text-align: center;
   color: #1e2e36;
 }
 .slader {
   margin-top: 52px;
+  margin-bottom: 100px;
   padding: 0px 51px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
 }
-.furniture {
-  height: 350px;
-  border-radius: 3px;
-  background-image: url(img/Rectangle170.png);
-}
-.reliability {
-  height: 350px;
-  background-image: url(img/Rectangle171.png);
-}
+.furniture,
+.reliability,
 .delivery {
-  height: 350px;
-  background-image: url(img/Rectangle172.png);
+  position: relative;
 }
 .furniture h3 {
   position: absolute;
-  width: 356px;
-  height: 45px;
-  left: -45px;
-  top: 1384px;
-  font-family: "Proxima Nova";
+  left: 30px;
+  bottom: 33px;
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
   line-height: 125%;
+  color: #fff;
+  border-bottom: 3px solid #44c697;
+}
 
-  text-align: center;
-  color: #ffffff;
-}
-.furnitureBg {
-  position: absolute;
-  width: 356px;
-  height: 3px;
-  left: 78px;
-  top: 1479px;
-  background: #44c697;
-}
 .reliability h3 {
   position: absolute;
-  width: 181px;
-  height: 45px;
-  left: 581px;
-  top: 1323px;
-  font-family: "Proxima Nova";
+  left: 30px;
+  bottom: 90px;
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
   line-height: 125%;
   text-align: center;
-  color: #ffffff;
-}
-.reliabilityBg {
-  position: absolute;
-  width: 181px;
-  height: 3px;
-  left: 697px;
-  top: 1418px;
-  background: #44c697;
+  color: #fff;
+  border-bottom: 3px solid #44c697;
 }
 .reliability p {
   position: absolute;
-  width: 526px;
-  height: 46px;
-  left: 623px;
-  top: 1420px;
-  font-family: "Proxima Nova";
+  left: 30px;
+  bottom: 30px;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -320,11 +329,8 @@ h2 {
 }
 .delivery h3 {
   position: absolute;
-  width: 392px;
-  height: 45px;
-  left: 1210px;
-  top: 1370px;
-  font-family: "Proxima Nova";
+  left: 30px;
+  bottom: 33px;
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
@@ -332,51 +338,131 @@ h2 {
   text-align: center;
   color: #ffffff;
 }
-.deliveryBg {
-  position: absolute;
-  width: 275px;
-  height: 3px;
-  left: 1336px;
-  top: 1465px;
+.delivery span {
+  border-bottom: 3px solid #44c697;
+}
+.goods,
+.about,
+.question {
+  width: 20px;
+  height: 50px;
+  margin: 0px auto;
   background: #44c697;
 }
-.goods {
-  margin-top: 100px;
-  width: 388px;
+.goods h2,
+.about h2,
+.question h2 {
   height: 60px;
-  margin-left: -5px;
-  top: 1612px;
-  font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 700;
   font-size: 48px;
   line-height: 125%;
-  text-align: center;
+  white-space: nowrap;
   color: #1e2e36;
 }
-.goodsH {
-  width: 20px;
-  height: 50px;
-  margin-left: 761px;
-  top: 1620px;
+.categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  margin-top: 50px;
+  padding: 0px 160px;
+}
+.categories-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.categories-name div {
+  max-width: 100px;
+}
+.categories-name svg path {
+  fill: #1e2e36;
+  transition: fill 0.5s stroke 0.5s;
+}
+.categories-item:hover .categories-title,
+.categories-item:hover svg path {
+  fill: #44c697;
+  border-bottom: 3px solid #44c696;
+}
+.title-sofa {
+  padding-top: 15px;
+}
+.title-chair {
+  padding-top: 21px;
+}
+.title-commode {
+  padding-top: 10px;
+}
+.title-kitchen {
+  padding-top: 6px;
+}
+.categories-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 125%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #1e2e36;
+  transition: fill 0.5s stroke 0.5s;
+  border-bottom: 3px solid #44c69600;
+}
+
+.items {
+  margin-top: 87px;
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0px 51px;
+  gap: 30px;
+}
+
+.adeleAll:hover .adeleAbout span,
+.empireAll:hover .empireAbout span,
+.veniceAll:hover .veniseAbout span,
+.chesterAll:hover .chesterAbout span,
+.ramonaAll:hover .ramonaAbout span,
+.atlantAll:hover .atlantAbout span {
+  color: #fff;
+}
+.atlantAll,
+.adeleAll,
+.veniceAll,
+.chesterAll,
+.empireAll,
+.ramonaAll {
+  cursor: pointer;
+  transition: transform 500ms ease;
+}
+.empireAll:hover,
+.adeleAll:hover,
+.atlantAll:hover,
+.ramonaAll:hover,
+.chesterAll:hover,
+.veniceAll:hover {
+  transform: translateY(-10px);
   background: #44c697;
 }
-.categories {
-  margin-top: 25px;
-}
-.items {
+.ramonaAbout,
+.chesterAbout,
+.veniseAbout,
+.empireAbout,
+.adeleAbout,
+.atlantAbout {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px;
 }
-.ramona {
-  background-image: url(img/Rectangle140.png);
-  width: 586px;
-  height: 300px;
+.ramona,
+.chester,
+.empire,
+.atlant {
+  position: relative;
 }
-.ramona h3 {
+.ramona h3,
+.empire h3 {
   width: 119px;
   height: 33px;
-  font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -384,74 +470,41 @@ h2 {
   line-height: 125%;
   color: #ffffff;
   position: absolute;
-  margin-left: 0px;
-  margin-top: 10px;
+  left: 0px;
+  top: 10px;
   text-align: center;
   background: #1e2e36;
 }
-.ramonaAll {
-  width: 586px;
-  height: 360px;
-  cursor: pointer;
-  transition: transform 500ms ease;
-  margin-left: 51px;
-}
-.ramonaAll:hover,
-.chesterAll:hover,
-.veniceAll:hover {
-  transform: translateY(-10px);
-  background: #44c697;
-  color: #fff;
-}
-.ramonaАbout {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 586px;
-  height: 60px;
-}
-
-.ramonaName {
-  margin-left: 15px;
-  font-family: "Proxima Nova";
+.ramonaName,
+.chesterName,
+.veniceName,
+.empireName,
+.adeleName,
+.atlantName {
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 125%;
-  text-align: left;
-  margin-top: 15px;
+  text-transform: uppercase;
   color: #1e2e36;
 }
-.ramonaPrice {
-  font-family: "Proxima Nova";
+.ramonaPrice,
+.venicePrice,
+.empirePrice,
+.adelePrice {
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 125%;
   text-align: center;
+  text-transform: uppercase;
   color: #1e2e36;
-  margin-top: 15px;
-  padding-right: 15px;
 }
-.chesterAll {
-  margin-left: 30px;
-  width: 586px;
-  height: 360px;
-  cursor: pointer;
-  transition: transform 500ms ease;
-  margin-left: 30px;
-}
-.chester {
-  background-image: url(img/Rectangle141.png);
-  width: 586px;
-  height: 300px;
-}
-
-.chester h3 {
+.chester h3,
+.atlant h3 {
   position: absolute;
-  margin-left: 0px;
-  margin-top: 10px;
-  font-family: "Proxima Nova";
+  left: 0px;
+  top: 10px;
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -462,14 +515,13 @@ h2 {
   text-align: center;
   text-transform: uppercase;
   color: #ffffff;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding-left: 20px;
-  gap: 0px;
+  padding: 5px 15px;
 }
-.chester p {
-  font-family: "Proxima Nova";
+.chester p,
+.atlant p {
+  position: absolute;
+  left: 0px;
+  top: 48px;
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -477,283 +529,24 @@ h2 {
   text-align: center;
   text-transform: uppercase;
   color: #ffffff;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding-left: 15px;
-  gap: 0px;
-  padding-right: -20px;
-  position: absolute;
+  padding: 5px 15px;
   width: 84px;
   height: 33px;
-  margin-left: 0px;
-  margin-top: 48px;
   background: #ff1b1b;
 }
-.chesterAbout {
-  display: flex;
-  flex-direction: row;
-  max-width: 586px;
-  max-height: 60px;
-}
-.chesterName {
-  font-family: "Proxima Nova";
+.chesterPrice,
+.atlantPrice {
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 125%;
   text-align: center;
   text-transform: uppercase;
-  color: #1e2e36;
-  margin-left: 15px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-.chesterPrice {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 125%;
-  text-align: center;
-  text-transform: uppercase;
-  margin-left: 160px;
-  margin-top: 15px;
-  margin-bottom: 15px;
   color: #ff1b1b;
 }
 .oldPrice {
-  margin-top: 20px;
+  margin-top: 5px;
   margin-left: 10px;
-  font-family: "Proxima Nova";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 125%;
-  text-align: center;
-  text-decoration-line: line-through;
-  text-transform: uppercase;
-  color: #bcbdbb;
-}
-.veniceAll {
-  margin-left: 30px;
-  width: 586px;
-  height: 360px;
-  cursor: pointer;
-  transition: transform 500ms ease;
-}
-.venice {
-  background-image: url(img/Rectangle142.png);
-  width: 586px;
-  height: 300px;
-}
-.veniseAbout {
-  display: flex;
-  flex-direction: row;
-  max-width: 586px;
-  max-height: 60px;
-}
-.veniceName {
-  margin-top: 15px;
-  margin-left: 15px;
-  font-family: "Proxima Nova";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 125%;
-  text-align: left;
-  color: #1e2e36;
-  text-transform: uppercase;
-}
-.venicePrice {
-  font-family: "Proxima Nova";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 125%;
-  margin-top: 15px;
-  margin-left: 160px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  text-align: center;
-  text-transform: uppercase;
-  color: #1e2e36;
-}
-.empireAll {
-  max-width: 586px;
-  height: 350px;
-  cursor: pointer;
-  transition: transform 500ms ease;
-  margin-left: 51px;
-  position: relative;
-  top: 60px;
-}
-.empire {
-  margin-top: -60px;
-  background-image: url(img/Rectangle149.png);
-  width: 586px;
-  height: 300px;
-}
-.empireAll:hover,
-.adeleAll:hover,
-.atlantAll:hover {
-  background: #44c697;
-  transform: translateY(-10px);
-}
-.empireNew {
-  width: 119px;
-  height: 33px;
-  background: #1e2e36;
-  position: relative;
-  top: 10px;
-}
-.empireNew h3 {
-  position: relative;
-  top: 6px;
-  left: -100px;
-  width: 89px;
-  height: 23px;
-  font-family: "Proxima Nova";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 125%;
-  text-align: center;
-  text-transform: uppercase;
-  color: #ffffff;
-}
-.empireAbout {
-  display: flex;
-  flex-direction: row;
-  max-width: 586px;
-  max-height: 60px;
-}
-.empireAbout:hover {
-  color: #ffffff;
-}
-
-.empireName {
-  font-family: "Proxima Nova";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 125%;
-  text-align: center;
-  text-transform: uppercase;
-  color: #1e2e36;
-  margin-left: 12px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-.empirePrice {
-  font-family: "Proxima Nova";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 125%;
-  margin-top: 15px;
-  margin-left: 245px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  text-align: center;
-  text-transform: uppercase;
-  color: #1e2e36;
-}
-.adeleAll {
-  margin-left: 30px;
-  max-width: 586px;
-  height: 350px;
-  cursor: pointer;
-  transition: transform 500ms ease;
-  position: relative;
-  top: 60px;
-}
-.adele {
-  margin-top: -60px;
-  background-image: url(img/Rectangle151.png);
-  width: 586px;
-  height: 300px;
-}
-.adelePrice {
-  font-family: "Proxima Nova";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 125%;
-  margin-top: 15px;
-  margin-left: 265px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  text-align: center;
-  text-transform: uppercase;
-  color: #1e2e36;
-}
-.atlantAll {
-  margin-top: 50px;
-  margin-left: 30px;
-  transition: transform 500ms ease;
-  cursor: pointer;
-}
-.hit {
-  font-family: "Proxima Nova";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 125%;
-  text-align: center;
-  text-transform: uppercase;
-  color: #ffffff;
-  position: relative;
-  top: 10px;
-  padding-left: 20px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 143px;
-  height: 33px;
-  background: #1e2e36;
-}
-.promo {
-  font-family: "Proxima Nova";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 125%;
-  text-align: center;
-  text-transform: uppercase;
-  color: #ffffff;
-  padding-left: 15px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  position: relative;
-  width: 84px;
-  height: 33px;
-  left: 0px;
-  top: 15px;
-  background: #ff1b1b;
-}
-.atlant {
-  background-image: url(img/Rectangle150.png);
-  width: 586px;
-  height: 300px;
-}
-.atlantPrice {
-  font-family: "Proxima Nova";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 125%;
-  text-align: center;
-  text-transform: uppercase;
-  margin-left: 160px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  color: #ff1b1b;
-}
-.old {
-  margin-top: 20px;
-  margin-left: 10px;
-  font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -764,81 +557,61 @@ h2 {
   color: #bcbdbb;
 }
 .catalog__btn {
-  font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 125%;
   text-transform: uppercase;
-  margin-left: 865px;
-  margin-top: 50px;
-  width: 190px;
-  height: 51px;
+  display: block;
+  margin: 0px auto;
   cursor: pointer;
   color: #ffffff;
-  border: none;
   background: #44c697;
   border-radius: 3px;
   padding: 14px 46px;
   transition: transform 500ms ease;
 }
-
-.about {
-  width: 20px;
-  height: 50px;
-  margin-left: 863px;
-  background: #44c697;
-  position: relative;
-  margin-top: 105px;
-}
 .aboutAs {
-  width: 181px;
-  height: 60px;
-  font-family: "Proxima Nova";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 48px;
-  line-height: 125%;
-  text-align: center;
-  color: #1e2e36;
-  position: absolute;
-  margin-top: -5px;
-  left: 5px;
+  margin-top: 100px;
+}
+
+.aboutAs-item {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.aboutFoto {
+  background-image: url(./img/Rectangle174.png);
+  margin-left: 27%;
+  max-width: 1407px;
+  height: 675px;
 }
 .articles {
   position: absolute;
-  top: 3085px;
+  margin-top: 100px;
   left: 0px;
   background-color: #fff;
-  width: 791px;
-  height: 475px;
+  max-width: 791px;
+  max-height: 475px;
   border-right: 15px solid #44c697;
   border-radius: 0px 3px 3px 0px;
   display: flex;
   flex-direction: column;
+  gap: 15px;
+  padding: 50px 30px 50px 50px;
 }
-.aboutFoto {
-  background-image: url(./img/Rectangle174.png);
-  width: 1407px;
-  height: 675px;
-  margin-top: 55px;
-  margin-left: 513px;
-}
-.article {
-  padding-top: 50px;
-  width: 710px;
-  height: 138px;
-  font-family: "Proxima Nova";
+
+.article,
+.articleTwo,
+.acticleThree {
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 125%;
   text-align: left;
   color: #1e2e36;
-  margin-bottom: 45px;
 }
 .article span {
-  font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -846,78 +619,32 @@ h2 {
   text-transform: uppercase;
   color: #44c697;
 }
-.articleTwo {
-  width: 710px;
-  height: 138px;
-  font-family: "Proxima Nova";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 125%;
-  color: #1e2e36;
-  text-align: left;
-}
-.acticleThree {
-  width: 710px;
-  height: 69px;
-  font-family: "Proxima Nova";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 125%;
-  color: #1e2e36;
-
-  text-align: left;
-}
-.question {
-  margin-top: 105px;
-  width: 20px;
-  height: 50px;
-  margin-left: 703px;
-  background: #44c697;
+.questionAbout {
   position: relative;
-  margin-top: 105px;
-}
-.questionAll {
-  font-family: "Proxima Nova";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 48px;
-  line-height: 125%;
-  text-align: center;
-  color: #1e2e36;
-  position: absolute;
-  margin-top: -5px;
-  width: 504px;
-  height: 60px;
-  text-align: center;
-  color: #1e2e36;
 }
 .questionFoto {
-  margin-top: 55px;
+  margin-top: 50px;
   margin-left: 0px;
-  width: 1561px;
+  max-width: 1561px;
   height: 675px;
   background: url(/img/Rectangle175.png);
   border-radius: 0px 3px 3px 0px;
 }
 .questionForm {
   position: absolute;
-  top: 3970px;
-  left: 1385px;
+  top: 100px;
+  right: 0px;
   width: 513px;
   height: 457px;
   background: #ffffff;
   border-radius: 0px;
   border-left: 15px solid #44c697;
   border-radius: 3px 0px 0px 3px;
+  padding: 50px 51px 50px 30px;
 }
 .questionForm h3 {
-  width: 384px;
+  white-space: nowrap;
   height: 45px;
-  padding-top: 5px;
-  margin-left: 30px;
-  font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
@@ -926,43 +653,25 @@ h2 {
   align-items: center;
   text-align: center;
   color: #1e2e36;
+  margin-bottom: 15px;
 }
-.name {
-  margin-left: 30px;
-  margin-top: 30px;
-  width: 432px;
-  height: 51px;
-  font-family: "Proxima Nova";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 125%;
-  color: #1e2e36;
-  background: #ffffff;
-  border: 1px solid #1e2e36;
-  border-radius: 3px;
-}
+.name,
 .phone {
-  width: 432px;
+  margin-top: 15px;
+  width: 430px;
   height: 51px;
-  background: #ffffff;
-  border: 1px solid #1e2e36;
-  border-radius: 3px;
-  font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 125%;
   color: #1e2e36;
-  margin-left: 30px;
-  margin-top: 15px;
+  background: #ffffff;
+  border: 1px solid #1e2e36;
+  border-radius: 3px;
 }
 .send__btn {
-  width: 432px;
-  height: 51px;
-  margin-left: 30px;
+  padding: 14px 160px;
   margin-top: 15px;
-  font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -976,24 +685,11 @@ h2 {
   transition: transform 500ms ease;
 }
 .infor {
-  width: 395px;
+  max-width: 395px;
   height: 69px;
-  margin-left: 30px;
   margin-top: 30px;
 }
-.info {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 125%;
-  align-items: center;
-  color: #1e2e36;
-}
-.info b {
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 125%;
-}
+.info,
 .contact {
   font-style: normal;
   font-weight: 400;
@@ -1002,61 +698,70 @@ h2 {
   align-items: center;
   color: #1e2e36;
 }
+.contact span {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 125%;
+}
+
+/*  */
 .futer {
   margin-top: 109px;
   display: flex;
+  position: relative;
 }
 .futerInfo {
+  padding: 0px 51px;
   width: 831px;
   height: 520px;
   background: #1e2e36;
+  /* flex: 0 0 auto; */
 }
-.up {
-  background: #1e2e36;
-  border-radius: 100px;
+.arrow-up {
+  /* background: #1e2e36; */
   border: none;
 }
-.up img {
+
+.arrow-up img {
   position: absolute;
-  left: 25px;
-  top: 4635px;
+  left: 36px;
+  top: -20px;
   width: 80px;
   height: 80px;
   padding: 0px;
 }
 .futerLogo {
-  margin-left: 51px;
-  width: 360px;
+  max-width: 360px;
   margin-top: 51px;
 }
-.futerMenu {
+
+.futer-menu {
   display: flex;
   margin-top: 50px;
-  margin-left: 51px;
-  list-style: none;
+  justify-content: space-between;
+  gap: 20px;
 }
-.categoriesMenu li,
-.futerAboutUs li,
-.networks li {
-  list-style: none;
-}
-.futerCategories {
+
+.menu-categories__item:not(:first-child) {
   margin-top: 15px;
 }
-.futerAboutUs {
-  margin-left: 57px;
+.futer-border {
+  border-top: solid 3px #44c697;
+  width: 4px;
+}
+.menu-about {
   margin-top: -3px;
 }
-.futerAbout {
+.menu-about__item:not(:first-child) {
   margin-top: 15px;
 }
 .futerContacts {
-  margin-left: 89.25px;
   margin-top: -7px;
 }
 .futerContact {
   margin-top: 10px;
 }
+
 .networks ul {
   display: flex;
   flex-direction: row;
@@ -1071,39 +776,45 @@ h2 {
 .networks span {
   width: 217px;
   height: 23px;
-  font-family: "Proxima Nova";
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 125%;
   color: #ffffff;
   flex: none;
+  white-space: nowrap;
 }
 .copyright {
-  margin-top: 85px;
-  margin-left: 51px;
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
 }
 .copyrightFurniture {
-  font-family: "Proxima Nova";
+  padding-top: 6px;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 120%;
   align-items: center;
   color: #ffffff;
+  white-space: nowrap;
+  margin-right: 15px;
 }
 .copyrightLogo {
-  margin-left: 180px;
   font-family: "Cuprum";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
+  text-align: center;
   text-transform: uppercase;
   color: #ffffff;
-  width: 238px;
-  height: 17px;
+  white-space: nowrap;
 }
+.copyrightLogo img {
+  margin-right: 3px;
+}
+
 .futerFoto {
   width: 1089px;
   height: 520px;
@@ -1123,10 +834,9 @@ h2 {
   background: url(/img/Left.png) no-repeat;
   background-size: contain;
   position: absolute;
-  top: 50%;
-  margin-top: 1005px;
-  margin-left: 55px;
-  margin-right: -516px;
+  top: 35%;
+  margin-left: 10px;
+  margin-right: 10px;
   display: block;
   width: 30px;
   height: 30px;
@@ -1135,7 +845,7 @@ h2 {
   color: transparent;
   border: none;
   outline: 0;
-  z-index: 10;
+  z-index: 1;
 }
 
 element.style {
@@ -1144,4 +854,344 @@ element.style {
 
 .slick-next {
   right: 10px;
+}
+/*  */
+
+/*  */
+@media screen and (max-width: 1680px) {
+  .reliability p {
+    width: 356px;
+    height: 46px;
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 1460px) {
+  .logo img {
+    width: 260px;
+  }
+  .menu,
+  .submenu,
+  .navmenu__item,
+  .header__categories,
+  .shoppingCart,
+  .header__btn {
+    font-size: 15px;
+  }
+  .header__categories,
+  .order,
+  .navmenu__item {
+    gap: 7px;
+  }
+  .header__btn,
+  .bed__btn,
+  .catalog__btn {
+    padding: 10px 15px;
+    margin-top: 3px;
+  }
+  .novelty {
+    height: 500px;
+    width: 350px;
+  }
+  .novelty h1 {
+    margin-top: 45px;
+    font-size: 50px;
+  }
+  .novelty h3 {
+    margin-top: 30px;
+    font-size: 26px;
+  }
+  .reliability p {
+    max-width: 256px;
+  }
+  .delivery h3,
+  .furniture h3,
+  .reliability h3 {
+    font-size: 26px;
+  }
+  .items {
+    padding: 0px 20px;
+    gap: 10px;
+  }
+  .ramonaAbout,
+  .chesterAbout,
+  .veniseAbout,
+  .empireAbout,
+  .adeleAbout,
+  .atlantAbout {
+    padding: 10px;
+  }
+  .ramonaName,
+  .chesterName,
+  .veniceName,
+  .empireName,
+  .adeleName,
+  .atlantName,
+  .ramonaPrice,
+  .venicePrice,
+  .empirePrice,
+  .adelePrice,
+  .chesterPrice,
+  .atlantPrice {
+    font-size: 18px;
+  }
+  .oldPrice {
+    font-size: 15px;
+    margin-left: 5px;
+  }
+}
+@media screen and (max-width: 1110px) {
+  .header-body,
+  .header,
+  .slader {
+    padding: 0px 20px;
+  }
+  .logo img {
+    width: 160px;
+  }
+  .header__categories,
+  .order,
+  .navmenu__item,
+  .menu,
+  .submenu,
+  .shoppingCart {
+    gap: 3px;
+  }
+  .submenu__item {
+    margin-left: 0px;
+    gap: 0px;
+  }
+  .bed {
+    margin-bottom: 20px;
+  }
+  .benefits,
+  .goods,
+  .aboutAs,
+  .question {
+    margin-left: 15%;
+  }
+  .delivery h3,
+  .furniture h3,
+  .reliability h3 {
+    font-size: 20px;
+  }
+  .aboutAs {
+    margin-top: 20px;
+  }
+  .slader {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 15px;
+  }
+  .categories {
+    margin-top: 20px;
+    padding: 0 60px;
+  }
+  .items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .aboutFoto {
+    margin-left: 0px;
+  }
+  .questionForm {
+    max-width: 400px;
+    padding: 30px;
+  }
+  .questionForm h3 {
+    font-size: 28px;
+    margin-bottom: 0px;
+  }
+  .name,
+  .phone,
+  .send__btn,
+  .info,
+  .contact,
+  .contact span {
+    font-size: 15px;
+  }
+  .info,
+  .contact {
+    max-width: 291px;
+  }
+  .send__btn {
+    padding: 14px 100px;
+  }
+  .name,
+  .phone,
+  .infor {
+    max-width: 291px;
+  }
+  .networks {
+    display: none;
+  }
+}
+@media screen and (max-width: 930px) {
+  .header,
+  .header-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 10px;
+    margin-bottom: 10px;
+  }
+  .novelty {
+    margin-left: 31px;
+    height: 400px;
+    width: 300px;
+  }
+  .novelty h1 {
+    margin-top: 20px;
+  }
+  .novelty h3 {
+    margin-top: 15px;
+  }
+  .novelty p {
+    font-size: 26px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+  .date {
+    margin-top: 10px;
+  }
+  .delivery h3,
+  .furniture h3,
+  .reliability h3 {
+    font-size: 18px;
+    left: 5px;
+  }
+  .reliability p {
+    max-width: 216px;
+    left: 5px;
+  }
+  .categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .benefits h2,
+  .goods h2,
+  .about h2,
+  .question h2 {
+    font-size: 36px;
+  }
+}
+@media screen and (max-width: 704px) {
+  .slader {
+    margin-top: 15px auto 0px;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: center;
+  }
+  .reliability p {
+    max-width: 336px;
+  }
+  .furniture,
+  .reliability,
+  .delivery {
+    margin: 0 auto;
+  }
+  .benefits,
+  .goods,
+  .about,
+  .question {
+    margin-left: 5%;
+  }
+  .novelty p {
+    max-width: 255px;
+  }
+  .categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .items {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .ramona img,
+  .chester img,
+  .venice img,
+  .empire img,
+  .adele img,
+  .atlant img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .articles {
+    padding: 10px;
+    gap: 5px;
+  }
+  .article,
+  .articleTwo,
+  .acticleThree,
+  .article span {
+    font-size: 15px;
+    line-height: 100%;
+  }
+  .futerContacts {
+    display: none;
+  }
+  .futerFoto {
+    display: none;
+  }
+  .futerInfo {
+    padding: 0px 15px;
+  }
+  .copyright {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .slick-next,
+  .slick-prev,
+  element.style {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 475px) {
+  .logo img {
+    width: 260px;
+  }
+  .header-body {
+    display: flex;
+    flex-direction: row;
+  }
+  .menu,
+  .submenu,
+  .subMenu,
+  .navmenu,
+  .header__categories,
+  .border,
+  .shoppingCart,
+  .header__btn {
+    display: none;
+  }
+  .novelty {
+    max-width: 280px;
+  }
+
+  .benefits,
+  .goods,
+  .about,
+  .question {
+    width: 10px;
+    height: 30px;
+  }
+  .benefits h2,
+  .goods h2,
+  .about h2,
+  .question h2 {
+    font-size: 26px;
+  }
+  .reliability p {
+    max-width: 275px;
+  }
+  .categories {
+    padding: 0 20px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .questionForm {
+    max-width: 335px;
+    max-height: 380px;
+    padding: 10px;
+  }
 }
