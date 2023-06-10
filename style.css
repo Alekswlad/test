@@ -176,7 +176,9 @@ body {
 .burger-menu__link {
   color: #ffffff;
   font-size: 16px;
-  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 .burger-menu__btn {
   position: relative;
@@ -249,9 +251,9 @@ body {
   line-height: 125%;
   color: #1e2e36;
 }
-.novelty p {
+.novelty-text {
   margin-top: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 27px;
   width: 313px;
   height: 90px;
   font-style: normal;
@@ -262,7 +264,39 @@ body {
   color: #1e2e36;
 }
 .date {
-  margin-top: 50px;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.date-text__day {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 125%;
+  text-align: center;
+  color: #1e2e36;
+}
+.date-text__month {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 125%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #1e2e36;
+}
+.date-icons {
+  padding-top: 5px;
+}
+.date-icon {
+  margin-right: 5px;
+}
+.date-icon:hover {
+  fill: #1e2e36;
+  scale: 0.95;
+}
+.date-icon:hover .date-icon__arrow {
+  fill: #fff;
 }
 /*  */
 .benefits {
@@ -291,6 +325,21 @@ body {
 .reliability,
 .delivery {
   position: relative;
+}
+.furniture-icon {
+  position: absolute;
+  top: 40%;
+  left: 15px;
+  cursor: pointer;
+}
+.furniture-icon:hover,
+.delivery-icon:hover {
+  fill: #fff;
+}
+
+.furniture-icon:hover .furniture-icon__arrow,
+.delivery-icon:hover .delivery-icon__arrow {
+  fill: #1e2e36;
 }
 .furniture h3 {
   position: absolute;
@@ -326,6 +375,12 @@ body {
   line-height: 125%;
   text-align: left;
   color: #ffffff;
+}
+.delivery-icon {
+  position: absolute;
+  right: 15px;
+  top: 40%;
+  cursor: pointer;
 }
 .delivery h3 {
   position: absolute;
@@ -683,6 +738,7 @@ body {
   border-radius: 3px;
   border: none;
   transition: transform 500ms ease;
+  cursor: pointer;
 }
 .infor {
   max-width: 395px;
@@ -729,6 +785,9 @@ body {
   width: 80px;
   height: 80px;
   padding: 0px;
+}
+.arrow-up img:hover {
+  scale: 1.05;
 }
 .futerLogo {
   max-width: 360px;
@@ -787,10 +846,10 @@ body {
 .copyright {
   margin-top: 80px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 .copyrightFurniture {
-  padding-top: 6px;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -810,6 +869,8 @@ body {
   text-transform: uppercase;
   color: #ffffff;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
 }
 .copyrightLogo img {
   margin-right: 3px;
@@ -820,43 +881,6 @@ body {
   height: 520px;
   background: url(/img/Rectangle176.png);
 }
-
-.slick-prev {
-  left: 10px;
-  -moz-transform: scale(-1, 1);
-  -webkit-transform: scale(-1, 1);
-  -o-transform: scale(-1, 1);
-  -ms-transform: scale(-1, 1);
-  transform: scale(-1, 1);
-}
-.slick-next,
-.slick-prev {
-  background: url(/img/Left.png) no-repeat;
-  background-size: contain;
-  position: absolute;
-  top: 35%;
-  margin-left: 10px;
-  margin-right: 10px;
-  display: block;
-  width: 30px;
-  height: 30px;
-  filter: brightness(1);
-  cursor: pointer;
-  color: transparent;
-  border: none;
-  outline: 0;
-  z-index: 1;
-}
-
-element.style {
-  display: block;
-}
-
-.slick-next {
-  right: 10px;
-}
-/*  */
-
 /*  */
 @media screen and (max-width: 1680px) {
   .reliability p {
@@ -902,6 +926,9 @@ element.style {
   }
   .reliability p {
     max-width: 256px;
+  }
+  .date {
+    padding-top: 15px;
   }
   .delivery h3,
   .furniture h3,
@@ -1051,7 +1078,7 @@ element.style {
     margin-bottom: 5px;
   }
   .date {
-    margin-top: 10px;
+    padding: 15px 0px;
   }
   .delivery h3,
   .furniture h3,

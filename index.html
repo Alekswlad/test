@@ -103,10 +103,9 @@
         <ul class="order">
           <li class="shoppingCart">
             <a href="#">
-              <img src="img/shopping-cart.png" alt="chevron" width="29" /><span
-                >КОШИК</span
-              ></a
-            >
+              <img src="img/shopping-cart.png" alt="chevron" width="29" />
+              <span>КОШИК</span>
+            </a>
           </li>
           <li><button class="header__btn">ЗАМОВИТИ ДЗВІНОК</button></li>
         </ul>
@@ -138,51 +137,53 @@
             </li>
 
             <li class="">
-              <a href="#">
-                <img src="img/Дивани.png" alt="Дивани" width=""
+              <a href="#" class="burger-menu__link">
+                <span class="burger-menu__item">Дивани</span>
+                <img src="img/stroke.svg" alt="stroke" width="10"
               /></a>
             </li>
 
             <li class="">
-              <a href="#"> <img src="img/ліжка.png" alt="ліжка" width="" /></a>
+              <a href="#" class="burger-menu__link">
+                <span class="burger-menu__item">Ліжка</span>
+                <img src="img/stroke.svg" alt="stroke" width="10" />
+              </a>
             </li>
 
             <li class="">
-              <a href="#">
-                <img src="img/Крісла.png" alt="крісла" width=""
-              /></a>
+              <a href="#" class="burger-menu__link">
+                <span class="burger-menu__item">Крісла</span>
+                <img src="img/stroke.svg" alt="stroke" width="10" />
+              </a>
             </li>
             <li class="">
-              <a href="#">
-                <img src="img/комоди.png" alt="комоди" width=""
-              /></a>
+              <a href="#" class="burger-menu__link">
+                <span class="burger-menu__item">Комоди</span>
+                <img src="img/stroke.svg" alt="stroke" width="10" />
+              </a>
             </li>
             <li class="">
-              <a href="#"> <img src="img/шафи.png" alt="шафи" width="" /></a>
+              <a href="#" class="burger-menu__link">
+                <span class="burger-menu__item">Шафи</span>
+                <img src="img/stroke.svg" alt="stroke" width="10" />
+              </a>
             </li>
             <li class="">
-              <a href="#"> <img src="img/Кухні.png" alt="кухні" width="" /></a>
+              <a href="#" class="burger-menu__link">
+                <span class="burger-menu__item">Кухні</span>
+                <img src="img/stroke.svg" alt="stroke" width="10" />
+              </a>
             </li>
-            <div class="networks">
-              <span>Ми в соціальних мережах:</span>
-              <ul>
-                <li>
-                  <a href="#">
-                    <img src="./img/telegram.png" alt="Телеграм" width=""
-                  /></a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img src="./img/Path.png" alt="Фейсбук" width=""
-                  /></a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img src="./img/insta.png" alt="Інста" width=""
-                  /></a>
-                </li>
-              </ul>
-            </div>
+            <li class="burger-menu__item">
+              <a href="#" class="burger-menu__link">
+                <img
+                  src="img/shopping-cart.svg"
+                  alt="shopping-cart"
+                  width="29"
+                />
+                <span class="burger-menu__item">КОШИК</span>
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
@@ -192,15 +193,56 @@
       <div class="novelty">
         <h1>Новинка!</h1>
         <h3>Ліжко Ornella</h3>
-        <p>Це новий рівень комфортного сну</p>
+        <p class="novelty-text">Це новий рівень комфортного сну</p>
         <button class="bed__btn">ДЕТАЛЬНІШЕ</button>
-        <img
-          class="date"
-          src="img/slideControl.png"
-          alt="Slide"
-          width="81"
-          height="80"
-        />
+        <div class="date">
+          <p class="date-text">
+            <span class="date-text__day">01</span
+            ><span class="date-text__month">/ 04</span>
+          </p>
+          <div class="date-icons">
+            <svg
+              class="date-icon"
+              width="31"
+              height="32"
+              viewBox="0 0 31 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M15.5 31C23.7843 31 30.5 24.2843 30.5 16C30.5 7.71573 23.7843 1 15.5 1C7.21573 1 0.5 7.71573 0.5 16C0.5 24.2843 7.21573 31 15.5 31Z"
+                stroke="#1E2E36"
+              />
+              <path
+                class="date-icon__arrow"
+                d="M11.6808 15.8695C11.6808 15.6592 11.7591 15.4488 11.9154 15.2884L16.8348 10.2408C17.1478 9.91973 17.6552 9.91973 17.968 10.2408C18.2808 10.5618 18.2808 11.0823 17.968 11.4034L13.615 15.8695L17.9678 20.3357C18.2806 20.6568 18.2806 21.1773 17.9678 21.4982C17.655 21.8194 17.1476 21.8194 16.8347 21.4982L11.9152 16.4507C11.759 16.2902 11.6808 16.0799 11.6808 15.8695Z"
+                fill="#1E2E36"
+              />
+            </svg>
+            <svg
+              class="date-icon"
+              width="31"
+              height="32"
+              viewBox="0 0 31 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M15.5 31C23.7843 31 30.5 24.2843 30.5 16C30.5 7.71573 23.7843 1 15.5 1C7.21573 1 0.5 7.71573 0.5 16C0.5 24.2843 7.21573 31 15.5 31Z"
+                stroke="#1E2E36"
+              />
+              <path
+                class="date-icon__arrow"
+                d="M19.383 14.8696C19.383 15.08 19.3064 15.2903 19.1534 15.4507L14.3386 20.4983C14.0324 20.8194 13.5358 20.8194 13.2296 20.4983C12.9235 20.1774 12.9235 19.6569 13.2296 19.3357L17.49 14.8696L13.2298 10.4034C12.9236 10.0823 12.9236 9.56188 13.2298 9.24094C13.5359 8.91969 14.0325 8.91969 14.3388 9.24094L19.1536 14.2884C19.3065 14.4489 19.383 14.6593 19.383 14.8696Z"
+                fill="#1E2E36"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -210,16 +252,29 @@
 
     <div class="slader">
       <div class="furniture">
+        <svg
+          class="furniture-icon"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M16 31C24.2843 31 31 24.2843 31 16C31 7.71573 24.2843 1 16 1C7.71573 1 1 7.71573 1 16C1 24.2843 7.71573 31 16 31Z"
+            stroke="white"
+          />
+          <path
+            class="furniture-icon__arrow"
+            d="M12.4783 15.8695C12.4783 15.6592 12.5566 15.4488 12.7128 15.2884L17.6323 10.2408C17.9452 9.91973 18.4526 9.91973 18.7654 10.2408C19.0782 10.5618 19.0782 11.0823 18.7654 11.4034L14.4124 15.8695L18.7652 20.3357C19.0781 20.6568 19.0781 21.1773 18.7652 21.4982C18.4524 21.8194 17.9451 21.8194 17.6321 21.4982L12.7127 16.4507C12.5564 16.2902 12.4783 16.0799 12.4783 15.8695Z"
+            fill="white"
+          />
+        </svg>
+
         <img src="img/Rectangle170.png" alt="Rectangle170" />
         <h3>Меблі преміум класу</h3>
-        <button
-          class="slick-prev slick-arrow"
-          aria-label="Previous"
-          type="button"
-          style="display: block"
-        >
-          Previous
-        </button>
       </div>
 
       <div class="reliability">
@@ -231,16 +286,29 @@
         </p>
       </div>
       <div class="delivery">
+        <svg
+          class="delivery-icon"
+          width="31"
+          height="32"
+          viewBox="0 0 31 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M15.5 31C23.7843 31 30.5 24.2843 30.5 16C30.5 7.71573 23.7843 1 15.5 1C7.21573 1 0.5 7.71573 0.5 16C0.5 24.2843 7.21573 31 15.5 31Z"
+            stroke="white"
+          />
+          <path
+            class="delivery-icon__arrow"
+            d="M19.383 14.8696C19.383 15.08 19.3064 15.2903 19.1534 15.4507L14.3386 20.4983C14.0324 20.8194 13.5358 20.8194 13.2296 20.4983C12.9235 20.1774 12.9235 19.6569 13.2296 19.3357L17.49 14.8696L13.2298 10.4034C12.9236 10.0823 12.9236 9.56188 13.2298 9.24094C13.5359 8.91969 14.0325 8.91969 14.3388 9.24094L19.1536 14.2884C19.3065 14.4489 19.383 14.6593 19.383 14.8696Z"
+            fill="white"
+          />
+        </svg>
+
         <img src="img/Rectangle172.png" alt="Rectangle172" />
         <h3><span>Безкоштовна </span>доставка</h3>
-        <button
-          class="slick-next slick-arrow"
-          aria-label="Next"
-          type="button"
-          style="display: block"
-        >
-          Next
-        </button>
       </div>
     </div>
 
@@ -878,9 +946,9 @@
     </section>
     <section>
       <div class="futer">
-        <a class="arrow-up" href="#top"
-          ><img class="" src="img/наверх.png" alt="top"
-        /></a>
+        <a class="arrow-up" href="#top">
+          <img class="" src="img/наверх.png" alt="top" />
+        </a>
         <div class="futerInfo">
           <img class="futerLogo" src="img/Frame12.png" alt="logo" />
 
